@@ -1,11 +1,11 @@
-FROM centos
+FROM i386/centos
 MAINTAINER Baris Sencan <baris.sncn@gmail.com>
 
 # Expose a range of possible Jedi Academy ports.
 EXPOSE 29060-29062/udp 29070-29081/udp
 
 # Install dependencies.
-RUN yum install -y glibc.i686
+RUN yum install -y glibc libcurl
 
 # Copy server files.
 COPY server/libcxa.so.1 /usr/lib/libcxa.so.1
